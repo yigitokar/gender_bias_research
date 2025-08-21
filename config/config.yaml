@@ -1,0 +1,66 @@
+# Gender Bias Research Pipeline Configuration
+
+# Data paths
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  embeddings_path: "data/embeddings/"
+  models_path: "data/models/"
+
+# Column names in your actual data
+columns:
+  text_column: "raw_cat"           # Your text column name
+  gender_column: "female0_pred"    # Your existing gender labels (0.0=MALE, 1.0=FEMALE)
+  title_column: "title_id1"        # Thread ID
+  post_column: "post1"             # Post ID
+
+# API Configuration
+api:
+  openai:
+    model_name: "gpt-4o-mini"
+    embedding_model: "text-embedding-3-small"
+    temperature: 0
+    max_tokens: 150
+    
+# Model Configuration
+models:
+  bert:
+    model_name: "bert-base-uncased"
+    max_length: 512
+    embedding_dim: 768
+  
+  sbert:
+    model_name: "paraphrase-MiniLM-L6-v2"
+    embedding_dim: 384
+    
+  classification:
+    test_size: 0.2
+    random_state: 42
+    
+# Sampling Configuration (matching your notebook values)
+sampling:
+  sample_fraction: 0.01        # You used 1% sample (frac=0.01)
+  random_state: 39            # You used random_state=39
+  batch_size: 10000
+  
+# Your actual data statistics  
+data_stats:
+  original_size: 1700000       # ~1.7M posts total
+  filtered_size: 444224        # Posts with gender labels (after filtering NaN)
+  male_posts: 341226           # female0_pred = 0.0
+  female_posts: 102998         # female0_pred = 1.0
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+# Gender placeholders for text scrubbing
+placeholders:
+  pronouns:
+    - "[PRONOUN]"
+    - "[PRONOUN_POSSESSIVE]"
+    - "[PRONOUN_OBJECT]"
+  names: "[NAME]"
+  family_members: "[FAMILY_MEMBER]"
+  titles: "[TITLE]"
