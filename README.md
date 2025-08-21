@@ -197,23 +197,6 @@ placeholders:
   family_members: "[FAMILY_MEMBER]"
 ```
 
-## 📊 Understanding the Results
-
-### Gender Labeling Quality
-- The pipeline validates labeling quality by re-labeling a random sample
-- Expected agreement rate: ~92% based on human validation
-- Low-confidence labels are flagged for manual review
-
-### Text Scrubbing Effectiveness
-- Analysis shows average word reduction and replacement counts
-- Validation checks for missed gender cues
-- Examples of heavily modified texts are saved for inspection
-
-### Embedding Comparison
-- Classification accuracy indicates how well embeddings preserve semantic gender information
-- Higher accuracy = better semantic preservation after scrubbing
-- Comparison across multiple embedding methods provides robust evaluation
-
 ## 🧪 Development & Testing
 
 ### Code Quality
