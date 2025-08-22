@@ -31,9 +31,11 @@ class ConfigLoader:
                 config = yaml.safe_load(file)
             return config
         except FileNotFoundError:
-            raise FileNotFoundError(f"Configuration file not found: {self.config_path}")
+            raise FileNotFoundError(
+                f"Configuration file not found: {self.config_path}"
+            ) from None
         except yaml.YAMLError as e:
-            raise ValueError(f"Error parsing configuration file: {e}")
+            raise ValueError(f"Error parsing configuration file: {e}") from e
 
     def get(self, key_path: str, default: Any = None) -> Any:
         """

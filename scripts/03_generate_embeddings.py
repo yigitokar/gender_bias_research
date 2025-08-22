@@ -95,7 +95,7 @@ def main() -> None:
                 logger.info("Running OpenAI embeddings...")
                 embedder = OpenAIEmbedder()
                 out_path = output_dir / "openai_embeddings.csv"
-                result = embedder.embed_dataframe(
+                embedder.embed_dataframe(
                     df=df,
                     text_column=args.text_column,
                     output_prefix="openai",
@@ -108,7 +108,7 @@ def main() -> None:
                 logger.info("Running BERT CLS embeddings...")
                 embedder = BertEmbedder()
                 out_path = output_dir / "bert_cls_embeddings.csv"
-                result = embedder.embed_dataframe(
+                embedder.embed_dataframe(
                     df=df,
                     text_column=args.text_column,
                     strategy="cls",
@@ -121,7 +121,7 @@ def main() -> None:
                 logger.info("Running BERT mean embeddings...")
                 embedder = BertEmbedder()
                 out_path = output_dir / "bert_mean_embeddings.csv"
-                result = embedder.embed_dataframe(
+                embedder.embed_dataframe(
                     df=df,
                     text_column=args.text_column,
                     strategy="mean",

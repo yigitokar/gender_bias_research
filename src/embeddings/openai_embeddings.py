@@ -377,7 +377,7 @@ def main():
 
         # Generate embeddings (using a sample for demo)
         sample_df = df.head(100)  # Process first 100 for demo
-        result_df = embedder.embed_dataframe(
+        embedder.embed_dataframe(
             df=sample_df,
             text_column="scrubbed_text",
             output_prefix="openai_ada",

@@ -113,7 +113,7 @@ JSON Response:"""
 
             return reasoning, answer
 
-        except (json.JSONError, KeyError, ValueError) as e:
+        except (json.JSONDecodeError, KeyError, ValueError) as e:
             logger.warning(
                 f"Failed to parse response: {response_text[:100]}... Error: {e}"
             )

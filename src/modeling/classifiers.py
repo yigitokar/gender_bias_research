@@ -185,7 +185,7 @@ class EmbeddingClassifier:
 
         best_val_acc = 0.0
         best_state: dict | None = None
-        for epoch in range(epochs):
+        for _ in range(epochs):
             model.train()
             for xb, yb in train_loader:
                 optimizer.zero_grad()
@@ -439,7 +439,7 @@ class EmbeddingClassifier:
                 )
 
                 # Train models
-                training_results = self.train_models(X_train, y_train)
+                self.train_models(X_train, y_train)
 
                 # Evaluate models
                 evaluation_results = self.evaluate_models(

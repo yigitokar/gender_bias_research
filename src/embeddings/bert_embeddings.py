@@ -330,7 +330,7 @@ def main():
         cls_output_path = (
             Path(config.get("data.embeddings_path")) / "bert_cls_embeddings.csv"
         )
-        cls_df = embedder.embed_dataframe(
+        embedder.embed_dataframe(
             df=df.head(1000),  # Process first 1000 for demo
             text_column="scrubbed_text",
             strategy="cls",
@@ -342,7 +342,7 @@ def main():
         mean_output_path = (
             Path(config.get("data.embeddings_path")) / "bert_mean_embeddings.csv"
         )
-        mean_df = embedder.embed_dataframe(
+        embedder.embed_dataframe(
             df=df.head(1000),  # Process first 1000 for demo
             text_column="scrubbed_text",
             strategy="mean",
