@@ -1,3 +1,16 @@
+# Model artifacts (do not commit trained weights/results)
+/data/models/**
+!/data/models/.gitkeep
+
+# Torch weight files
+*.pt
+*.pth
+
+# Pickled model files under models dir
+/data/models/**/*.pkl
+
+# Optional: embedding progress checkpoints
+/data/embeddings/*_progress.csv
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

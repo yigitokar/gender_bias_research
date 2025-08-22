@@ -1,0 +1,38 @@
+{
+  "openai_embeddings": {
+    "best_model": "Random Forest",
+    "best_accuracy": 1.0,
+    "embedding_dimension": 1536,
+    "model_results": {
+      "Lasso Logistic": 0.5,
+      "Random Forest": 1.0,
+      "MLP_Torch": 0.5,
+      "LightGBM": 0.5,
+      "XGBoost": 0.5
+    }
+  },
+  "bert_mean_embeddings": {
+    "best_model": "Lasso Logistic",
+    "best_accuracy": 1.0,
+    "embedding_dimension": 768,
+    "model_results": {
+      "Lasso Logistic": 1.0,
+      "Random Forest": 1.0,
+      "MLP_Torch": 0.5,
+      "LightGBM": 0.5,
+      "XGBoost": 0.5
+    }
+  },
+  "bert_cls_embeddings": {
+    "best_model": "Lasso Logistic",
+    "best_accuracy": 0.5,
+    "embedding_dimension": 768,
+    "model_results": {
+      "Lasso Logistic": 0.5,
+      "Random Forest": 0.5,
+      "MLP_Torch": 0.5,
+      "LightGBM": 0.5,
+      "XGBoost": 0.5
+    }
+  }
+}

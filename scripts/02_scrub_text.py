@@ -260,7 +260,7 @@ def main():
             if issues:
                 logger.warning(f"Found {len(issues)} potential scrubbing issues:")
                 for i, issue in enumerate(issues[:5]):  # Show first 5
-                    logger.warning(f"  Issue {i+1}: {issue}")
+                    logger.warning(f"  Issue {i + 1}: {issue}")
 
                 # Save validation issues
                 validation_path = (
